@@ -1,0 +1,11 @@
+services:
+  bot:
+    build: .
+    env_file: .env
+    restart: unless-stopped
+    init: true
+    volumes:
+      - novax_data:/app/data
+    stop_grace_period: 30s
+volumes:
+  novax_data:
